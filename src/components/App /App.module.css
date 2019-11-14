@@ -1,0 +1,11 @@
+body {
+  margin: 0px;
+}
+
+.body {
+  display: flex;
+  background-image: url(../../images/queen_background2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
