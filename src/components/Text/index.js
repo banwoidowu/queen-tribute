@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import css from "./Text.module.css";
 
-function Text() {
-  var quotes = [
+const Text = () => {
+  let [count, setCounter] = useState(1);
+
+  const quotes = [
     "I won't be a rock star. I will be a legend",
     "I'm just a musical prostitute my dear",
     "Who wants to live forever?",
@@ -12,22 +14,25 @@ function Text() {
     "A concert is not a live rendition of our album. It's a theatrical event"
   ];
 
-  var counter = 0;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (count >= quotes.length) {
+        setCounter((count = 0));
+      } else {
+        setCounter(count++);
+      }
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
 
-  setInterval(function() {
-    if (counter >= quotes.length) {
-      counter = 0;
-    } else {
-      counter++;
-    }
-  }, 7000);
+  console.log(count);
 
   return (
     <div>
-      <q className={css.quote}>{quotes[counter]}</q>
+      <q className={css.quote}>{quotes[count]}</q>
       <cite>Freddie Mercury</cite>
     </div>
   );
-}
+};
 
 export default Text;
