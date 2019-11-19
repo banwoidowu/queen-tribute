@@ -4,16 +4,22 @@
   margin-top: 100px;
   margin-left: 50px;
 }
+.animate1,
+.animate2 {
+  animation: fadeIn 0.7s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .cite {
   color: #00a8ff;
 }
 .textContainer {
   width: 650px;
   text-align: center;
-}
-
-.slide {
-  -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
