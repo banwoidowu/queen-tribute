@@ -4,3 +4,16 @@
   margin-top: 100px;
   margin-left: 50px;
 }
+.cite {
+  color: #00a8ff;
+}
+.textContainer {
+  width: 650px;
+  text-align: center;
+}
+
+.slide {
+  -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}

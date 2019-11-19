@@ -9,14 +9,3 @@ body {
   background-size: cover;
   height: 100vh;
 }
-
-.quote {
-  font-size: 3rem;
-  color: #daa520;
-  margin-top: 100px;
-  margin-left: 50px;
-}
-
-.text-box {
-  text-align: center;
-}

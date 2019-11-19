@@ -21,16 +21,16 @@ const Text = () => {
       } else {
         setCounter(count++);
       }
-    }, 7000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
   console.log(count);
 
   return (
-    <div>
+    <div className={css.textContainer}>
       <q className={css.quote}>{quotes[count]}</q>
-      <cite>Freddie Mercury</cite>
+      <cite className={css.cite}>Freddie Mercury</cite>
     </div>
   );
 };
