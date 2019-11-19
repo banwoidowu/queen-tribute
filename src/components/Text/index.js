@@ -14,17 +14,18 @@ const Text = () => {
     "A concert is not a live rendition of our album. It's a theatrical event"
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (count >= quotes.length) {
-        setCounter((count = 0));
-      } else {
-        setCounter(count++);
-      }
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+  const updateQuote = () => {
+    if (count >= quotes.length - 1) {
+      setCounter(0);
+    } else {
+      setCounter(count + 1);
+    }
+  };
 
+  useEffect(() => {
+    const interval = setTimeout(updateQuote, 2500);
+    return () => clearTimeout(interval);
+  }, [count]);
   console.log(count);
 
   return (
