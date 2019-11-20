@@ -1,11 +1,38 @@
+.linkBox {
+  animation: fadeIn 3s ease-in-out;
+  margin-top: 100px;
+  margin-left: 250px;
+  position: fixed;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.images {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
 .spotify {
   width: 50px;
   height: auto;
 }
 .apple {
+  margin-top: 10px;
   width: 50px;
   height: auto;
 }
+.youtube {
+  width: 50px;
+  height: auto;
+  margin-top: 13px;
+}
 .header {
-  color: #00a8ff;
+  display: flex;
+  justify-content: center;
+  color: #e60b7b;
 }

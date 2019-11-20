@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import css from "./Text.module.css";
 
 const Text = () => {
-  let [count, setCounter] = useState(1);
+  let [count, setCounter] = useState(0);
 
   const quotes = [
     "I won't be a rock star. I will be a legend",
@@ -14,18 +14,18 @@ const Text = () => {
     "A concert is not a live rendition of our album. It's a theatrical event"
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (count >= quotes.length) {
-        setCounter((count = 0));
-      } else {
-        setCounter(count++);
-      }
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+  const updateQuote = () => {
+    if (count >= quotes.length - 1) {
+      setCounter(0);
+    } else {
+      setCounter(count + 1);
+    }
+  };
 
-  console.log(count);
+  useEffect(() => {
+    const interval = setTimeout(updateQuote, 2500);
+    return () => clearTimeout(interval);
+  }, [count]);
 
   return (
     <div className={css.textContainer}>
