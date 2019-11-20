@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import css from "./Text.module.css";
 
 const Text = () => {
-  let [count, setCounter] = useState(1);
+  let [count, setCounter] = useState(0);
 
   const quotes = [
     "I won't be a rock star. I will be a legend",
@@ -26,7 +26,6 @@ const Text = () => {
     const interval = setTimeout(updateQuote, 2500);
     return () => clearTimeout(interval);
   }, [count]);
-  console.log(count);
 
   return (
     <div className={css.textContainer}>
