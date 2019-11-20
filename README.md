@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Queen Tribute Page
+Dummy queen tribute page project. Quick HTML, CSS and JS practise using flexbox, hooks and React.
+
 ## Available Scripts
 
 In the project directory, you can run:
