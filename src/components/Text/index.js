@@ -11,7 +11,8 @@ const Text = () => {
     "The whole point of Queen was to be original",
     "Music is limitless",
     "I always knew I was a star and now, the rest of the world seems to agree with me",
-    "A concert is not a live rendition of our album. It's a theatrical event"
+    "A concert is not a live rendition of our album. It's a theatrical event",
+    "I want to lead the Victorian life, surrounded by exquisite clutter."
   ];
 
   const updateQuote = () => {
