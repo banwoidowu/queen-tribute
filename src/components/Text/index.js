@@ -25,6 +25,10 @@ const Text = () => {
     }
   };
 
+  const handleAnimationEnd = () => {
+    setFade(false);
+  };
+
   useEffect(() => {
     if (!fade) {
       updateQuote();
@@ -35,7 +39,7 @@ const Text = () => {
   return (
     <div
       className={cn(css.textContainer, { [css.fadeIn]: fade })}
-      onAnimationEnd={() => setFade(false)}
+      onAnimationEnd={handleAnimationEnd}
     >
       <q className={css.quote}>{quotes[count]}</q>
       <cite className={css.cite}>Freddie Mercury</cite>
