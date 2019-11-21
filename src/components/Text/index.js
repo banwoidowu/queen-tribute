@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import cn from "classnames";
 import css from "./Text.module.css";
 
 const Text = () => {
-  let [count, setCounter] = useState(0);
+  const [count, setCounter] = useState(0);
+  const [fade, setFade] = useState(true);
 
   const quotes = [
     "I won't be a rock star. I will be a legend",
@@ -23,13 +25,22 @@ const Text = () => {
     }
   };
 
+  const handleAnimationEnd = () => {
+    setFade(false);
+  };
+
   useEffect(() => {
-    const interval = setTimeout(updateQuote, 2500);
-    return () => clearTimeout(interval);
-  }, [count]);
+    if (!fade) {
+      updateQuote();
+      setFade(true);
+    }
+  }, [fade]);
 
   return (
-    <div className={css.textContainer}>
+    <div
+      className={cn(css.textContainer, { [css.fadeIn]: fade })}
+      onAnimationEnd={handleAnimationEnd}
+    >
       <q className={css.quote}>{quotes[count]}</q>
       <cite className={css.cite}>Freddie Mercury</cite>
     </div>
